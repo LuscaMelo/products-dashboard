@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="nav-link" [routerLink]="['/products']">
             <img src="https://www.l5.com.br/hubfs/Logo%20L5.png" alt="L5" width="30" height="40">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -10,10 +10,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Products</a>
+                    <a class="nav-link" [routerLink]="['/products']">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categories</a>
+                    <a class="nav-link" [routerLink]="['/categories']">Categories</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mt-1">
@@ -23,11 +23,15 @@
                         <img src="https://www.l5.com.br/hubfs/Logo%20L5.png" alt="L5" width="25" height="25">
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">User page</a></li>
+                        <li>
+                            <a class="dropdown-item" [routerLink]="['/login']">User Page</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li>
+                            <a class="dropdown-item" [routerLink]="['/login']">Logout</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
