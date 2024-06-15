@@ -6,44 +6,15 @@
         </div>
         <div class="col-md-9">
             <div class="d-flex gap-3 flex-wrap">
-                <div class="card col-md-4" style="width: 19rem;">
-                    <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+                <div *ngFor="let product of productList" class="card col-md-4" style="width: 19rem;">
+                    <img src={{product.category.image}} class="card-img-top h-100" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-md-4" style="width: 19rem;">
-                    <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-md-4" style="width: 19rem;">
-                    <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-md-4" style="width: 19rem;">
-                    <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title fw-bold mt-2">{{product.title}}</h5>
+                        <p class="card-text fw-light mb-3">{{product.description}}</p>
+                        <div class="d-flex d-flex justify-content-between align-items-center">
+                            <span>{{product.price}}</span>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
                     </div>
                 </div>
             </div>
