@@ -4,7 +4,6 @@ import { FilterComponent } from '../layout/filter/filter.component';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -17,7 +16,7 @@ export class ProductsComponent implements OnInit {
 
   productList: Product[] = []
 
-  constructor(private productService: ProductService, public sanitizer: DomSanitizer) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAllProducts()
