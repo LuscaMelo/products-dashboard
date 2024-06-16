@@ -4,11 +4,12 @@ import { FilterComponent } from '../layout/filter/filter.component';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NavbarComponent, FilterComponent, CommonModule],
+  imports: [NavbarComponent, FilterComponent, CommonModule, RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
