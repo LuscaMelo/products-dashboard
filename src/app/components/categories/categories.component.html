@@ -1,2 +1,19 @@
 <app-navbar></app-navbar>
-<p>categories works!</p>
+<div class="container mt-3">
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let category of categoriesList" class="col-md-6 col-lg-3">
+            <div class="p-1">
+                <div class="card rounded"
+                    style="background: url({{category.image}}); background-size: cover; height: 300px;">
+                    <div class="bg-cover h-100 rounded p-5">
+                        <div class="card-body rounded text-light">
+                            <p class="card-text"><small class="text-secondary">Category</small></p>
+                            <h5 class="card-title fs-3">{{category.name}}</h5>
+                            <a [routerLink]="['/products']" class="btn btn-primary mt-5 w-100">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
