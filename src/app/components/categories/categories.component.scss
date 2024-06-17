@@ -2,3 +2,10 @@
     background-color: black;
     opacity: 0.85;
 }
+
+@media only screen and (max-width: 996px) {
+    .card {
+        min-width: 380px;
+        margin: auto;
+    }
+}
