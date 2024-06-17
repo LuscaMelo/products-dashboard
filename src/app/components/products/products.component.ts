@@ -16,8 +16,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductsComponent implements OnInit {
 
-  productList: Product[] = []
-  allProducts: Product[] = []
+  productList!: Product[]
+  allProducts!: Product[]
 
   constructor(private productService: ProductService) { }
 
@@ -43,8 +43,13 @@ export class ProductsComponent implements OnInit {
         return product.title.includes(value)
       })
     }
-
   }
 
-
+  filterProducts(event: string) {
+    if (event == '') {
+      this.productList = this.allProducts
+    } else {
+      this.productList = this.allProducts.filter(product => product.category.name == event)
+    }
+  }
 }

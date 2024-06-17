@@ -2,7 +2,7 @@
 <div class="container mt-3">
     <div class="d-md-flex gap-3">
         <div class="col-md-3 bg-dark rounded h-100 mb-3">
-            <app-filter></app-filter>
+            <app-filter [productList]="productList" (filterName)="filterProducts($event)"></app-filter>
         </div>
         <div class="col-md-9">
             <div class="col-md-6">
@@ -14,12 +14,20 @@
             </div>
             <div class="d-flex gap-3 flex-wrap">
                 <div *ngFor="let product of productList" class="card col-md-4" style="width: 19rem;">
-                    <img src={{product.images[0]}} class="card-img-top h-100" alt="...">
-                    <div class="card-body">
+                    <img src={{product.images[0]}} class="card-img-top h-100 object-fit-cover"
+                        style="max-height: 300px;" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
                         <h5 class="card-title fw-bold mt-2">{{product.title}}</h5>
-                        <p class="card-text fw-light mb-3">{{product.description}}</p>
-                        <div class="d-flex d-flex justify-content-between align-items-center">
-                            <span>{{product.price}}</span>
+                        <div class="truncate">
+                            <p class="card-text fw-light mb-3 ">
+                                {{product.description}}</p>
+                        </div>
+                        <div class="d-flex">
+                            <span
+                                class="bg-secondary small p-1 pe-3 ps-3 rounded text-light fw-semibold opacity-50">{{product.category.name}}</span>
+                        </div>
+                        <div class="d-flex d-flex justify-content-between align-items-center mt-5">
+                            <span class="fs-3 fw-bold text-secondary">${{product.price}}</span>
                             <a [routerLink]="['/products']" class="btn btn-primary">Add to cart</a>
                         </div>
                     </div>
