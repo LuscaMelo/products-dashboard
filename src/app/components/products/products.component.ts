@@ -16,9 +16,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductsComponent implements OnInit {
 
-  search: string = ''
-
   productList: Product[] = []
+  allProducts: Product[] = []
 
   constructor(private productService: ProductService) { }
 
@@ -29,8 +28,23 @@ export class ProductsComponent implements OnInit {
   getAllProducts() {
     this.productService.getProducts().subscribe((res: any) => {
       this.productList = res
-      console.log(this.productList)
+      this.allProducts = this.productList
     })
+  }
+
+  searchProduct(e: Event): void {
+    const target = e.target as HTMLInputElement
+    const value = target.value
+
+    if (value === '') {
+      this.productList = this.allProducts
+    } else {
+      this.productList = this.productList.filter(product => {
+        value.charAt(0).toUpperCase() + value.slice(1);
+        return product.title.includes(value)
+      })
+    }
+
   }
 
 
