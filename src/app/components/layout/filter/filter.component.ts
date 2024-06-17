@@ -23,7 +23,6 @@ export class FilterComponent {
   getAllCategories() {
     this.categoryService.getCategories().subscribe((res: any) => {
       this.categoriesList = res
-      console.log(this.categoriesList)
     })
   }
 }

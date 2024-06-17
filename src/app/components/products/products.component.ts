@@ -40,7 +40,6 @@ export class ProductsComponent implements OnInit {
       this.productList = this.allProducts
     } else {
       this.productList = this.productList.filter(product => {
-        value.charAt(0).toUpperCase() + value.slice(1);
         return product.title.includes(value)
       })
     }
