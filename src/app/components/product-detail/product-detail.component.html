@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb fs-5 small">
+            <li class="breadcrumb-item"><a routerLink="/products"
+                    class="text-secondary link-offset-2 fw-bold">Products</a>
+            </li>
+            <li class="breadcrumb-item active">{{product.title}}</li>
+        </ol>
+    </nav>
+    <div class="d-flex mt-4">
+        <div class="col-md-6">
+            <img src={{product.images[0]}} class="card-img-top h-100 object-fit-cover rounded" alt="...">
+        </div>
+        <div class="col-md-6 ps-4 pt-5">
+            <div>
+                <span class="bg-secondary small p-1 pe-3 ps-3 rounded text-light fw-semibold opacity-50">Clothes</span>
+            </div>
+            <h3 class="mt-4 fs-1 fw-bold">{{product.title}}</h3>
+            <p class="fw-light w-75 mt-3">{{product.description}}</p>
+            <div class="d-flex align-items-center">
+                <span class="price me-5 fw-bold">${{product.price}}</span>
+            </div>
+            <a [routerLink]="['/products']" class="btn btn-primary mt-4 pe-5 ps-5 fw-bold fs-5">Buy Now</a>
+        </div>
+    </div>
+</div>
