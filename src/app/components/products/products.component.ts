@@ -36,12 +36,11 @@ export class ProductsComponent implements OnInit {
     const target = e.target as HTMLInputElement
     const value = target.value
 
-    if (value === '') {
+    this.productList = this.productList.filter(product => {
+      return product.title.includes(value)
+    })
+    if (value == '') {
       this.productList = this.allProducts
-    } else {
-      this.productList = this.productList.filter(product => {
-        return product.title.includes(value)
-      })
     }
   }
 
