@@ -4,7 +4,11 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /*color: #f3f3f4 !important;*/
+    color: #f3f3f4 !important;
+}
+
+body {
+    background-color: #24292d !important;
 }
 
 .bg-brand-light {
@@ -13,4 +17,33 @@
 
 .bg-brand-dark {
     background-color: #24292d !important;
+}
+
+.bg-brand-primary {
+    background-color: #683bb4 !important;
+}
+
+.brand-primary {
+    color: #855bce !important;
+}
+
+.brand-secondary {
+    color: #a5a5a5 !important;
+}
+
+.brand-dark {
+    color: #24292d !important;
+}
+
+.brand-light {
+    color: #343a40 !important;
+}
+
+.opacity-80 {
+    opacity: 0.8;
+}
+
+.nav-item a:hover {
+    color: #8762c7 !important;
+    transition: 0.25s;
 }

@@ -1,8 +1,8 @@
-<div class="text-light p-4">
-    <h4 class="mb-4 fs-2">Categories</h4>
+<div class="text-light pt-5 ps-5 fixed-top mt-5" style="max-width: 17%">
+    <h4 class="mb-5 fs-2 mt-2">Categories</h4>
     <ul class="d-flex flex-column gap-1 text-light list pb-3">
-        <li class="fs-6 mb-1 cursor-pointer" (click)="filterProducts(0)">All Products</li>
-        <li class="fs-6 mb-1 cursor-pointer" *ngFor="let category of categoriesList"
+        <li class="fs-6 mb-1 cursor-pointer nav-item" (click)="filterProducts(0)">All Products</li>
+        <li class="fs-6 mb-1 cursor-pointer nav-item" *ngFor="let category of categoriesList"
             (click)="filterProducts(category.id)">
             {{category.name}}</li>
     </ul>

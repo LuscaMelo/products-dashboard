@@ -1,0 +1,16 @@
+.dropdown-menu {
+    position: absolute;
+    top: 55px;
+    left: -113.5px;
+    border: 1px solid #24292d;
+}
+
+.dropdown-menu li a:hover {
+    background-color: transparent !important;
+}
+
+@media only screen and (min-width: 890px) {
+    .dropdown-menu {
+        left: 0;
+    }
+}

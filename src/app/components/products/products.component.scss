@@ -1,15 +1,28 @@
-@media only screen and (max-width: 996px) {
+.card {
+    height: 600px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
     .card {
-        width: 100%;
-        margin: auto;
-        width: 100%;
+        width: 48.6%;
     }
 }
 
-@media only screen and (min-width: 996px) {
+@media only screen and (min-width: 1300px) {
     .card {
-        width: 19rem;
+        width: 30%;
     }
+}
+
+@media only screen and (min-width: 1600px) {
+    .card {
+        width: 19%;
+    }
+}
+
+.card img {
+    max-height: 45%;
 }
 
 .truncate {
@@ -23,24 +36,39 @@
     overflow: hidden;
 }
 
+.form-control::placeholder {
+    color: rgb(170, 170, 170);
+    opacity: 1;
+}
+
+.form-control::-ms-input-placeholder {
+    color: rgb(170, 170, 170);
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
 
+.layout {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
 .placeholder {
     width: 100%;
+    height: 100%;
     min-height: 380px;
     border-radius: 0.4rem;
     overflow: hidden;
-    opacity: 0.2;
     cursor: auto;
-    animation: breathing 6s ease-out infinite normal;
+    animation: breathing 2s ease-out infinite normal;
+    background-color: rgb(71, 71, 71);
 }
 
 .placeholder .placeholder-image {
     width: 100%;
     height: 50%;
-    background-color: rgb(87, 87, 87);
+    background-color: black;
 }
 
 .placeholder .placeholder-body {
@@ -50,39 +78,39 @@
 .placeholder .placeholder-title {
     width: 100%;
     height: 20px;
-    background-color: rgb(87, 87, 87);
+    background-color: black;
 }
 
 .placeholder .placeholder-description {
     width: 100%;
     height: 70px;
-    background-color: rgb(87, 87, 87);
+    background-color: black;
 }
 
 .placeholder .placeholder-button {
     width: 30%;
     height: 30px;
-    background-color: rgb(87, 87, 87);
+    background-color: black;
 }
 
 @keyframes breathing {
     0% {
-        opacity: 0.4;
+        opacity: 0.2;
     }
 
     25% {
-        opacity: 0.2;
+        opacity: 0;
     }
 
     50% {
-        opacity: 0.4;
-    }
-
-    75% {
         opacity: 0.2;
     }
 
+    75% {
+        opacity: 0;
+    }
+
     100% {
-        opacity: 0.4;
+        opacity: 0.2;
     }
 }

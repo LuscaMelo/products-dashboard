@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
   productList!: Product[]
   allProducts: Product[] = []
 
-  canShow: boolean = false
+  canShow: boolean = true
   placeholder: number[] = [0, 1, 2, 3, 4, 5]
 
   constructor(private productService: ProductService) { }
