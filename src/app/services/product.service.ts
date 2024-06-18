@@ -15,7 +15,7 @@ export class ProductService {
     constructor(private http: HttpClient) { }
 
     getProducts(): Observable<Product[]> {
-        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset}&limit=3`)
+        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset}&limit=10`)
     }
 
     getProductItem(id: number): Observable<Product> {
@@ -23,7 +23,11 @@ export class ProductService {
     }
 
     getProductsPage() {
-        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset = this.offset + 3}&limit=3`)
+        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset = this.offset + 10}&limit=10`)
+    }
+
+    getByName(text: string) {
+        return this.http.get<Product>(apiConstants.BASE_URL + `products/?title=${text}`)
     }
 
 }

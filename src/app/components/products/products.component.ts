@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getAllProducts() {
-    this.productService.getProducts().subscribe((res: any) => {
+    this.productService.getProducts().subscribe((res: Product[]) => {
       this.productList = res
       this.allProducts = this.productList
     })
@@ -37,12 +37,10 @@ export class ProductsComponent implements OnInit {
     const target = e.target as HTMLInputElement
     const value = target.value
 
-    this.productList = this.productList.filter(product => {
-      return product.title.includes(value)
+    this.productService.getByName(value).subscribe((res: any) => {
+      this.productList = res
+      this.allProducts = this.productList
     })
-    if (value == '') {
-      this.productList = this.allProducts
-    }
   }
 
   filterProducts(event: string) {
