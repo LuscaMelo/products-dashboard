@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
 
   productList!: Product[]
   allProducts: Product[] = []
-
+  isHidde: boolean = true
   canShow: boolean = true
   placeholder: number[] = [0, 1, 2, 3, 4, 5]
 
@@ -63,5 +63,9 @@ export class ProductsComponent implements OnInit {
 
   onScroll() {
     this.getNextPage()
+  }
+
+  setOpen(event: boolean) {
+    this.isHidde = !this.isHidde
   }
 }

@@ -21,3 +21,16 @@
     color: #8762c7 !important;
     transition: 0.25s;
 }
+
+.menu {
+    overflow-x: hidden;
+    width: 60vw;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 1200px) {
+    .menu {
+        width: 16%;
+        height: 100vh;
+    }
+}

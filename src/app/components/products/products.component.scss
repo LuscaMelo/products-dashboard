@@ -3,24 +3,6 @@
     width: 100%;
 }
 
-@media only screen and (min-width: 700px) {
-    .card {
-        width: 48.6%;
-    }
-}
-
-@media only screen and (min-width: 1300px) {
-    .card {
-        width: 30%;
-    }
-}
-
-@media only screen and (min-width: 1600px) {
-    .card {
-        width: 19%;
-    }
-}
-
 .card img {
     max-height: 45%;
 }
@@ -91,6 +73,24 @@
     width: 30%;
     height: 30px;
     background-color: black;
+}
+
+@media only screen and (min-width: 700px) {
+    .card {
+        width: 48.6%;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .card {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .card {
+        width: 19%;
+    }
 }
 
 @keyframes breathing {

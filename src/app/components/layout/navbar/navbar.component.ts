@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterModule, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,6 +9,13 @@ import { RouterModule, RouterLink } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  routeParam: any;
+
+  @Output() setMenuOpen = new EventEmitter();
+
+  open: boolean = false
+
+  openMenu() {
+    this.setMenuOpen.emit()
+  }
 
 }

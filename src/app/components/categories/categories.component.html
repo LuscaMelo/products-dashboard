@@ -1,4 +1,11 @@
-<app-navbar></app-navbar>
+<app-navbar (setMenuOpen)="setOpen($event)"></app-navbar>
+<div class="menu col-md-2 bg-brand-light" [ngClass]="{'d-none' : isHidde}">
+    <div class="menu" (click)="setOpen(false)">
+        <div class="mb-5 ps-5 pt-4 fs-5 d-lg-none">
+            <a class="link-underline link-underline-opacity-0 nav-item" routerLink="/products">All Products</a>
+        </div>
+    </div>
+</div>
 <div class="container mt-3 mb-5">
     <div class="d-md-flex flex-wrap">
         <div *ngFor="let category of categoriesList" class="col-md-6 col-lg-4">

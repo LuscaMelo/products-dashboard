@@ -3,17 +3,19 @@ import { Category } from '../../../models/category.model';
 import { CommonModule } from '@angular/common';
 import { CategoryService } from '../../../services/category.service';
 import { Product } from '../../../models/product.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.scss'
 })
 export class FilterComponent {
 
   @Output() filterId = new EventEmitter();
+  @Output() close = new EventEmitter();
   @Input() productList!: Product[]
 
   categoriesList: Category[] = []
