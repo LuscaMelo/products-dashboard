@@ -1,13 +1,6 @@
 .bg-cover {
-    background-color: black;
-    opacity: 0.85;
-}
-
-@media only screen and (max-width: 996px) {
-    .card {
-        min-width: 380px;
-        margin: auto;
-    }
+    background-color: #000000;
+    opacity: 0.86;
 }
 
 .menu {
@@ -15,8 +8,20 @@
     height: 100vh;
 }
 
+.card-category {
+    height: 335px;
+    border: none;
+}
+
 @media only screen and (min-width: 890px) {
     .menu {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 996px) {
+    .card {
+        min-width: 380px;
+        margin: auto;
     }
 }
