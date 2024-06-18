@@ -2,4 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*color: #f3f3f4 !important;*/
+}
+
+.bg-brand-light {
+    background-color: #343a40 !important;
+}
+
+.bg-brand-dark {
+    background-color: #24292d !important;
 }
