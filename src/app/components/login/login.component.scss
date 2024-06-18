@@ -1,0 +1,23 @@
+.background {
+    background: url(../../../../public/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.headline {
+    font-size: 5rem;
+    line-height: 60px;
+}
+
+.form-control::placeholder {
+    color: rgb(201, 201, 201);
+    opacity: 1;
+    font-weight: semibold;
+}
+
+input:focus {
+    box-shadow: none;
+    border-left: 4px solid #855bce !important;
+    background-color: #c7c7ca !important;
+    color: #24292d !important;
+}

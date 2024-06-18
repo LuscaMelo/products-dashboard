@@ -1,44 +1,33 @@
-<div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column bg-dark min-vh-100">
-    <div class="col-md-6 col-sm-12 bg-white d-none flex-column justify-content-center align-items-center d-md-flex">
-        <img class="w-25" src="https://www.l5.com.br/hubfs/Logo%20L5.png" alt="L5 logo">
-        <div class="mt-5 w-50 p-2 text-center">
-            <h3 class="display-6 fw-semibold">Welcome back!</h3>
-            <p class="text-secondary mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, neque
-                sed
-                hendrerit
-                elementum, purus
-                lorem vestibulum elit, et vehicula leo nibh at lorem.</p>
+<div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column min-vh-100">
+    <div class="background col-md-6 col-sm-12"></div>
+    <div class="col-md-6 col-sm-12 p-5 d-flex flex-column justify-content-center align-items-center">
+        <div class="pb-5">
+            <div class="d-flex mb-5">
+                <img width="150" src="logoipsum.svg" alt="logo">
+            </div>
+            <div class="pe-2 pt-2">
+                <h4 class="headline fw-light">Helo,</h4>
+                <p class="headline fw-bold mt-1">Welcome!</p>
+            </div>
+            <form class="mt-5">
+                <div>
+                    <input type="email" class="form-control bg-brand-light border-1 border-brand rounded-0 p-3"
+                        [(ngModel)]="username" name="username" placeholder="Your username">
+                </div>
+                <div>
+                    <input type="password" class="form-control bg-brand-light border-1 border-brand rounded-0 p-3"
+                        [(ngModel)]="password" name="password" placeholder="Password">
+                </div>
+                <div class="w-100 text-end mb-5">
+                    <span class="small text-primary"><a href="#" class="link-underline link-underline-opacity-0">Forgot
+                            password?</a></span>
+                </div>
+                <button type="submit" class="btn bg-brand-primary w-100" (click)="login()">Log In</button>
+                <div class="w-100 text-center mt-3 mb-5">
+                    <p class="small brand-secondary">Don't you have an account? <span class="fw-semibold"><a href="#"
+                                class="link-underline link-underline-opacity-0">Sign Up</a></span></p>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-white">
-        <div class="w-50 d-flex d-md-none justify-content-center me-4 mb-5">
-            <img class="w-50" src="https://www.l5.com.br/hubfs/Logo%20L5.png" alt="L5 logo">
-        </div>
-        <div class="pe-3 border-bottom border-secondary pb-3">
-            <h4 class="fs-3">Welcome back!</h4>
-            <p class="fw-lighter mt-1">Log in to view products and categories.</p>
-        </div>
-        <form class="mt-5">
-            <div>
-                <label for="exampleInputEmail1" class="form-label">Usarname</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    [(ngModel)]="username" name="username">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div>
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password"
-                    name="password">
-            </div>
-            <div class="w-100 text-end mb-4">
-                <span class="small text-primary"><a href="#" class="link-underline link-underline-opacity-0">Forgot
-                        password?</a></span>
-            </div>
-            <button type="submit" class="btn btn-primary w-100" (click)="login()">Log In</button>
-            <div class="w-100 text-center mt-3">
-                <p class="small">Don't you have an account? <span class="text-primary fw-semibold"><a href="#"
-                            class="link-underline link-underline-opacity-0">Sign Up</a></span></p>
-            </div>
-        </form>
     </div>
 </div>
