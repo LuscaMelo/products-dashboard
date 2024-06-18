@@ -13,7 +13,7 @@ import { Product } from '../../../models/product.model';
 })
 export class FilterComponent {
 
-  @Output() filterName = new EventEmitter();
+  @Output() filterId = new EventEmitter();
   @Input() productList!: Product[]
 
   categoriesList: Category[] = []
@@ -37,6 +37,6 @@ export class FilterComponent {
   }
 
   sendFilter(filter: number) {
-    this.filterName.emit(filter)
+    this.filterId.emit(filter)
   }
 }

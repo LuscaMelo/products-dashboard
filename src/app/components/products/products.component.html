@@ -2,7 +2,7 @@
 <div class="container mt-3 mb-5">
     <div class="d-md-flex gap-3">
         <div class="col-md-3 bg-dark rounded h-100 mb-3">
-            <app-filter [productList]="productList" (filterName)="filterProducts($event)"></app-filter>
+            <app-filter [productList]="productList" (filterId)="filterProducts($event)"></app-filter>
         </div>
         <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"
             class="col-md-9">
