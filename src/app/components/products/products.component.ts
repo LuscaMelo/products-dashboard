@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NavbarComponent, FilterComponent, CommonModule, RouterLink, FormsModule],
+  imports: [NavbarComponent, FilterComponent, CommonModule, RouterLink, FormsModule, InfiniteScrollModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -50,5 +51,17 @@ export class ProductsComponent implements OnInit {
     } else {
       this.productList = this.allProducts.filter(product => product.category.name == event)
     }
+  }
+
+  getNextPage() {
+    this.productService.getProductsPage().subscribe((res: any) => {
+      const products: Product[] = res
+      const nextPage = this.productList.concat(products)
+      this.productList = nextPage
+    })
+  }
+
+  onScroll() {
+    this.getNextPage()
   }
 }

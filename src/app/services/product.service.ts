@@ -10,14 +10,20 @@ import { Product } from "../models/product.model";
 
 export class ProductService {
 
+    offset: number = 0
+
     constructor(private http: HttpClient) { }
 
     getProducts(): Observable<Product[]> {
-        return this.http.get<Product[]>(apiConstants.BASE_URL + 'products')
+        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset}&limit=3`)
     }
 
     getProductItem(id: number): Observable<Product> {
         return this.http.get<Product>(apiConstants.BASE_URL + `products/${id}`)
+    }
+
+    getProductsPage() {
+        return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset = this.offset + 3}&limit=3`)
     }
 
 }

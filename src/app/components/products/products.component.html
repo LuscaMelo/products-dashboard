@@ -4,7 +4,8 @@
         <div class="col-md-3 bg-dark rounded h-100 mb-3">
             <app-filter [productList]="productList" (filterName)="filterProducts($event)"></app-filter>
         </div>
-        <div class="col-md-9">
+        <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"
+            class="col-md-9">
             <div class="col-md-6">
                 <div class="mb-4">
                     <label for="exampleInputEmail1" class="form-label fs-3 fw-bold">Search for product</label>
