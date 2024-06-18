@@ -26,3 +26,63 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.placeholder {
+    width: 100%;
+    min-height: 380px;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    opacity: 0.2;
+    cursor: auto;
+    animation: breathing 6s ease-out infinite normal;
+}
+
+.placeholder .placeholder-image {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(87, 87, 87);
+}
+
+.placeholder .placeholder-body {
+    padding: 1.2rem;
+}
+
+.placeholder .placeholder-title {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(87, 87, 87);
+}
+
+.placeholder .placeholder-description {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(87, 87, 87);
+}
+
+.placeholder .placeholder-button {
+    width: 30%;
+    height: 30px;
+    background-color: rgb(87, 87, 87);
+}
+
+@keyframes breathing {
+    0% {
+        opacity: 0.4;
+    }
+
+    25% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    75% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

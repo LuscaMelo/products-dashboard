@@ -18,18 +18,22 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 export class ProductsComponent implements OnInit {
 
   productList!: Product[]
-  allProducts!: Product[]
+  allProducts: Product[] = []
+
+  canShow: boolean = false
+  placeholder: number[] = [0, 1, 2, 3, 4, 5]
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAllProducts()
+    this.canShow = true
   }
 
   getAllProducts() {
     this.productService.getProducts().subscribe((res: Product[]) => {
       this.productList = res
-      this.allProducts = this.productList
+      this.canShow = false
     })
   }
 
@@ -39,16 +43,14 @@ export class ProductsComponent implements OnInit {
 
     this.productService.getByName(value).subscribe((res: any) => {
       this.productList = res
-      this.allProducts = this.productList
     })
   }
 
-  filterProducts(event: string) {
-    if (event == '') {
-      this.productList = this.allProducts
-    } else {
-      this.productList = this.allProducts.filter(product => product.category.name == event)
-    }
+  filterProducts(filterId: number) {
+    this.productService.getByCategory(filterId).subscribe((res: any) => {
+      this.productList = res
+      console.log(res)
+    })
   }
 
   getNextPage() {
