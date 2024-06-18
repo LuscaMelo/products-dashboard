@@ -28,14 +28,15 @@ export class FilterComponent {
   getAllCategories() {
     this.categoryService.getCategories().subscribe((res: any) => {
       this.categoriesList = res
+      console.log(res)
     })
   }
 
-  filterProducts(filter: string) {
+  filterProducts(filter: number) {
     this.sendFilter(filter)
   }
 
-  sendFilter(filter: string) {
+  sendFilter(filter: number) {
     this.filterName.emit(filter)
   }
 }

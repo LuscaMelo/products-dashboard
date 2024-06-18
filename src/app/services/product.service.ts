@@ -22,12 +22,16 @@ export class ProductService {
         return this.http.get<Product>(apiConstants.BASE_URL + `products/${id}`)
     }
 
-    getProductsPage() {
+    getProductsPage(): Observable<Product[]> {
         return this.http.get<Product[]>(apiConstants.BASE_URL + `products?offset=${this.offset = this.offset + 10}&limit=10`)
     }
 
-    getByName(text: string) {
+    getByName(text: string): Observable<Product> {
         return this.http.get<Product>(apiConstants.BASE_URL + `products/?title=${text}`)
+    }
+
+    getByCategory(id: number): Observable<any> {
+        return this.http.get(apiConstants.BASE_URL + `products/?categoryId=${id}`)
     }
 
 }
