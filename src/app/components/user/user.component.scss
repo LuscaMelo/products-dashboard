@@ -1,0 +1,27 @@
+.content {
+    min-height: 93.1vh;
+    overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+.background {
+    background: url(../../../../public/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.headline {
+    font-size: 2rem;
+    line-height: 40px;
+}
+
+.menu {
+    width: 60vw;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 890px) {
+    .menu {
+        display: none;
+    }
+}

@@ -1,26 +1,43 @@
-<app-navbar></app-navbar>
-<div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center shadow rounded mt-5 p-5">
+<app-navbar (setMenuOpen)="setOpen($event)"></app-navbar>
+<div class="menu col-md-2 bg-brand-light" [ngClass]="{'d-none' : isHidde}">
+    <div class="menu" (click)="setOpen(false)">
+        <div class="mb-5 ps-5 pt-4 fs-5 d-lg-none d-flex flex-column gap-3 nav-item">
+            <a class="link-underline link-underline-opacity-0 nav-item" routerLink="/products">All Products</a>
+            <a class="link-underline link-underline-opacity-0 nav-item" routerLink="/category">All Categories</a>
+        </div>
+    </div>
+</div>
+<div class="content d-flex justify-content-center flex-lg-row flex-md-row flex-column">
+    <div class="background col-md-6 col-sm-12 bg-brand-primary">
+    </div>
+    <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
         <div class="">
-            <img src="https://www.l5.com.br/hubfs/Logo%20L5.png" alt="L5" width="250" height="300">
-        </div>
-        <h3 class="fs-1 fw-bold mt-3">L5 Networks</h3>
-        <div class="mt-3 d-flex flex-column align-items-center">
-            <span class="text-secondary">São Paulo, Brazil</span>
-            <span>Front End Developer - Angular 17</span>
-        </div>
-        <div class="d-flex mt-5 gap-5">
-            <div class="d-flex flex-column align-items-center">
-                <span class="fs-2 text-secondary fw-bold">53</span>
-                <span>Friends</span>
-            </div>
-            <div class="d-flex flex-column align-items-center">
-                <span class="fs-2 text-secondary fw-bold">18</span>
-                <span>Projects</span>
-            </div>
-            <div class="d-flex flex-column align-items-center">
-                <span class="fs-2 text-secondary fw-bold">200+</span>
-                <span>Commits</span>
+            <div class="pe-2">
+                <div class="d-flex mb-5">
+                    <img width="150" src="logoipsum.svg" alt="logo">
+                </div>
+                <div class="pb-4">
+                    <span class="brand-secondary small">Name Surname</span>
+                    <h4 class="headline fw-bold">L5 Networks</h4>
+                </div>
+                <div class="pb-5">
+                    <span class="brand-secondary small">Position</span>
+                    <h4 class="headline fw-bold">Front-End Developer</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="brand-secondary small">Friends</span>
+                        <h4 class="headline fw-bold">73</h4>
+                    </div>
+                    <div>
+                        <span class="brand-secondary small">Projects</span>
+                        <h4 class="headline fw-bold">18</h4>
+                    </div>
+                    <div>
+                        <span class="brand-secondary small">Commits</span>
+                        <h4 class="headline fw-bold">300+</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
