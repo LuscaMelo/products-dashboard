@@ -1,28 +1,38 @@
-<app-navbar></app-navbar>
-<div class="container mt-3">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb fs-5 small mb-4">
-            <li class="breadcrumb-item"><a routerLink="/products"
-                    class="text-secondary link-offset-2 fw-bold">Products</a>
-            </li>
-            <p class="mx-2">></p>
-            <li class="breadcrumb-item active">{{product.title}}</li>
-        </ol>
-    </nav>
-    <div class="d-md-flex mt-4 mb-5">
-        <div class="col-md-6">
-            <img src={{product.images[0]}} class="card-img-top h-100 object-fit-cover rounded" alt="...">
+<app-navbar (setMenuOpen)="setOpen($event)"></app-navbar>
+<div>
+    <div class="menu col-md-2 bg-brand-light" [ngClass]="{'d-none' : isHidde}">
+        <div class="menu" (click)="setOpen(false)">
+            <div class="mb-5 ps-5 pt-4 fs-5 d-lg-none d-flex flex-column gap-3 nav-item">
+                <a class="link-underline link-underline-opacity-0 nav-item" routerLink="/products">All Products</a>
+            </div>
         </div>
-        <div class="col-md-6 ps-4 pt-5">
-            <div>
-                <span class="bg-secondary small p-1 pe-3 ps-3 rounded text-light fw-semibold opacity-50">Clothes</span>
+    </div>
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb fs-5 small mb-4">
+                <li class="breadcrumb-item"><a routerLink="/products"
+                        class="text-secondary link-offset-2 fw-bold">Products</a>
+                </li>
+                <p class="mx-2">></p>
+                <li class="breadcrumb-item active">{{product.title}}</li>
+            </ol>
+        </nav>
+        <div class="d-md-flex mt-4 mb-5">
+            <div class="col-md-6">
+                <img src={{product.images[0]}} class="card-img-top h-100 object-fit-cover rounded" alt="...">
             </div>
-            <h3 class="mt-4 fs-1 fw-bold">{{product.title}}</h3>
-            <p class="fw-light w-75 mt-3">{{product.description}}</p>
-            <div class="d-flex align-items-center">
-                <span class="price me-5 fw-bold">${{product.price}}</span>
+            <div class="col-md-6 ps-4 pt-5">
+                <div>
+                    <span
+                        class="bg-secondary small p-1 pe-3 ps-3 rounded text-light fw-semibold opacity-50">Clothes</span>
+                </div>
+                <h3 class="mt-4 fs-1 fw-bold">{{product.title}}</h3>
+                <p class="fw-light w-75 mt-3">{{product.description}}</p>
+                <div class="d-flex align-items-center">
+                    <span class="price me-5 fw-bold">${{product.price}}</span>
+                </div>
+                <a [routerLink]="['/products']" class="btn btn-primary mt-4 pe-5 ps-5 fw-bold fs-5">Buy Now</a>
             </div>
-            <a [routerLink]="['/products']" class="btn btn-primary mt-4 pe-5 ps-5 fw-bold fs-5">Buy Now</a>
         </div>
     </div>
 </div>

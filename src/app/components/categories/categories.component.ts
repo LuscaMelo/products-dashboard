@@ -4,7 +4,6 @@ import { Category } from '../../models/category.model';
 import { CategoryService } from '../../services/category.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { FilterComponent } from '../layout/filter/filter.component';
 
 @Component({
   selector: 'app-categories',

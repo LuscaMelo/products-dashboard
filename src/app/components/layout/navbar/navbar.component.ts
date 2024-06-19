@@ -12,8 +12,6 @@ export class NavbarComponent {
 
   @Output() setMenuOpen = new EventEmitter();
 
-  open: boolean = false
-
   openMenu() {
     this.setMenuOpen.emit()
   }

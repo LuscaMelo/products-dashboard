@@ -1,7 +1,5 @@
 .content {
     min-height: 92.9vh;
-    overflow-x: hidden;
-    overflow-y: hidden !important;
 }
 
 .background {
@@ -30,16 +28,12 @@
 }
 
 @media only screen and (max-width: 890px) {
-    .menu {
-        display: none;
-    }
-
     .headline {
         font-size: 1.6rem;
         line-height: 40px;
     }
 
     .infos {
-        padding-left: 0px;
+        padding-left: 00px;
     }
 }
