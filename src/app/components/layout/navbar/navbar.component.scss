@@ -14,3 +14,9 @@
         left: 0;
     }
 }
+
+@media only screen and (max-width: 890px) {
+    .nav-link .logo {
+        width: 105px;
+    }
+}
