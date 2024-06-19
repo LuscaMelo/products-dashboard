@@ -21,3 +21,10 @@ input:focus {
     background-color: #c7c7ca !important;
     color: #24292d !important;
 }
+
+@media only screen and (max-width: 700px) {
+    .headline {
+        font-size: 3.7rem;
+        line-height: 45px;
+    }
+}

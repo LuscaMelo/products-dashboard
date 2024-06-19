@@ -1,10 +1,11 @@
 <app-navbar></app-navbar>
 <div class="container mt-3">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb fs-5 small">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb fs-5 small mb-4">
             <li class="breadcrumb-item"><a routerLink="/products"
                     class="text-secondary link-offset-2 fw-bold">Products</a>
             </li>
+            <p class="mx-2">></p>
             <li class="breadcrumb-item active">{{product.title}}</li>
         </ol>
     </nav>

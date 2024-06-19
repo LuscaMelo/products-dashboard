@@ -21,7 +21,11 @@
 
 @media only screen and (max-width: 996px) {
     .card {
-        min-width: 380px;
-        margin: auto;
+        min-width: 350px;
+        margin-bottom: 12px;
+    }
+
+    .padding-0 {
+        padding: 0 !important;
     }
 }
